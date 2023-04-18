@@ -1,0 +1,21 @@
+use crud;
+
+db.personas.insert({
+    "paterno":"Vazquez",
+    "materno":"Martinez",
+    "nombre":"Ana Cristina",
+    "fecha":"27-09-2003"
+});
+
+db.createUser({
+    user:"mongoadmin",
+    pwd:"134340",
+    roles:[
+        {
+            role: "readWrite",
+            db: "crud-acvm"
+        }
+    ]
+})
+
+    mongosh -u mongoadmin -p 134340 --authenticationDatabase crud-acvm
